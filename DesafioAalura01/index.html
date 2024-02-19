@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>&#128275; KEY &#128274;</title>
+    <link rel="stylesheet" href="./styles/style.css">
+</head>
+
+<body>
+    <header>
+        <img class="logo" src="./assets/AAlura.svg" alt="A Alura">
+    </header>
+
+    <main class="page">
+        <section class="conteudo">
+            <h1 class="conteudo__titulo">Digite seu texto</h1>
+            <textarea id="inputText" rows="6" cols="50"></textarea><br><br>
+            <label for="outputText">Texto Convertido:</label>
+            <textarea id="outputText" rows="4" cols="50" readonly></textarea>
+            <div>
+                <button onclick="copyText()">Copiar Texto Convertido</button>
+                <button onclick="pasteText()">Colar Texto a Converter</button>
+            </div>
+            <h2 class="conteudo-aviso">&#x2755; Apenas letras minúsculas e sem acento.</h2>
+            <div class="conteudo-botao">
+                <button class="apresentacao__links__navegacao" onclick="encryptText('encrypt')">
+                    &#128274; Criptografar
+                </button>
+                <button class="apresentacao__links__navegacao" onclick="encryptText('decrypt')">
+                    &#128275; Descriptografar
+                </button>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        function encryptText(action) {
+            var inputText = document.getElementById('inputText').value;
+            var outputText = '';
+
+            if (action === 'encrypt') {
+                for (var i = 0; i < inputText.length; i++) {
+                    var charCode = inputText.charCodeAt(i);
+                    outputText += String.fromCharCode(charCode + 1);
+                }
+            } else if (action === 'decrypt') {
+                for (var i = 0; i < inputText.length; i++) {
+                    var charCode = inputText.charCodeAt(i);
+                    outputText += String.fromCharCode(charCode - 1);
+                }
+            }
+
+            document.getElementById('outputText').value = outputText;
+        }
+
+        function copyText() {
+            var outputText = document.getElementById('outputText');
+            outputText.select();
+            document.execCommand('copy');
+            
+        }
+
+        function pasteText() {
+  var inputText = document.getElementById('inputText');
+  inputText.focus();
+
+  // Acessa o texto colado diretamente usando propriedades do objeto de evento
+  if (navigator.clipboard) {
+    navigator.clipboard.readText().then(function(texto) {
+      inputText.value = texto;
+    });
+  } else {
+    // Solução alternativa para navegadores mais antigos que usam a propriedade clipboardData obsoleta
+    var textoColado = (event.clipboardData || window.clipboardData).getData('text');
+    inputText.value = textoColado;
+  }
+}
+    </script>
+</body>
+
+</html>
