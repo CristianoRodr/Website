@@ -13,28 +13,34 @@
     <header>
         <img class="logo" src="./assets/AAlura.svg" alt="A Alura">
     </header>
-
+    
     <main class="page">
-        <section class="conteudo">
-            <h1 class="conteudo__titulo">Digite seu texto</h1>
-            <textarea id="inputText" rows="6" cols="50"></textarea><br><br>
-            <label for="outputText">Texto Convertido:</label>
-            <textarea id="outputText" rows="4" cols="50" readonly></textarea>
-            <div>
-                <button onclick="copyText()">Copiar Texto Convertido</button>
-                <button onclick="pasteText()">Colar Texto a Converter</button>
+
+        <div class="conteudo">
+            <div class="coluna1">            
+                <textarea id="inputText" rows="20" cols="100%" placeholder="Digite seu texto"></textarea><br><br>
+                <button  class="botaoColar"  onclick="pasteText()">Colar</button>
+                <div class="conteudo-botao">
+                    <button class="botao" onclick="encryptText('encrypt')">
+                        &#128274; Criptografar
+                    </button>
+                    <button class="botao" onclick="encryptText('decrypt')">
+                        &#128275; Descriptografar
+                    </button>
+                </div>
             </div>
-            <h2 class="conteudo-aviso">&#x2755; Apenas letras minúsculas e sem acento.</h2>
-            <div class="conteudo-botao">
-                <button class="apresentacao__links__navegacao" onclick="encryptText('encrypt')">
-                    &#128274; Criptografar
-                </button>
-                <button class="apresentacao__links__navegacao" onclick="encryptText('decrypt')">
-                    &#128275; Descriptografar
-                </button>
+            <div class="coluna2">
+                <div class="output">
+                    <textarea id="outputText" rows="4" cols="50" readonly placeholder="Nenhuma mensagem encontrada"></textarea>
+                    <img id="lupaImg" src="./assets/Lupa.svg" alt="Lupa">
+                    <button  class="botaoCopiar" onclick="copyText()">Copiar </button>
+                </div>
             </div>
-        </section>
+        </div>
+        
     </main>
+    
+
 
     <script>
         function encryptText(action) {
@@ -67,17 +73,20 @@
   var inputText = document.getElementById('inputText');
   inputText.focus();
 
-  // Acessa o texto colado diretamente usando propriedades do objeto de evento
-  if (navigator.clipboard) {
+   (navigator.clipboard) 
     navigator.clipboard.readText().then(function(texto) {
       inputText.value = texto;
     });
-  } else {
-    // Solução alternativa para navegadores mais antigos que usam a propriedade clipboardData obsoleta
-    var textoColado = (event.clipboardData || window.clipboardData).getData('text');
-    inputText.value = textoColado;
-  }
 }
+
+document.getElementById('inputText').addEventListener('input', function() {
+    var lupaImg = document.getElementById('lupaImg');
+    if (this.value === '') {
+        lupaImg.style.display = 'block'; 
+    } else {
+        lupaImg.style.display = 'none'; 
+    }
+});
     </script>
 </body>
 
