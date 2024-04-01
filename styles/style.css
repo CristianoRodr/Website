@@ -98,7 +98,7 @@ body{
 }
 .apresentacao__imagem{
     width: 30%;
-    border-radius:10%;
+    border-radius:8%;
     box-shadow: 10px 10px 10px var(--cor-hover)
     
 }
@@ -133,5 +133,10 @@ body{
     }
     .apresentacao__conteudo{
         width: auto;
+    }
+    .fixed {
+        position:relative;
+        /* top: 80%; */
+        left: 15%;
     }
 }
