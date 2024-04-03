@@ -143,8 +143,8 @@ body{
         position:relative;
         margin-top: 15%;
         left: 15%;
-        width: 150px;
-        height: 150px;
+        min-width: 150px;
+        min-height: 150px;
     }
     .rodape{
         padding: 5px;
