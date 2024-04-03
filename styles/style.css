@@ -146,4 +146,8 @@ body{
         width: 150px;
         height: 150px;
     }
+    .rodape{
+        padding: 5px;
+        font-size: 1rem;
+    }
 }
