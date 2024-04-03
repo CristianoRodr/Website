@@ -101,8 +101,8 @@ body{
     background-color: var(--cor-hover);
 }
 .apresentacao__imagem{
-    width: 30%;
-    min-width: 130px;
+    width: 30ch;
+    min-width: 10%;
     border-radius:50%;
     box-shadow: 10px 10px 10px var(--cor-hover)
     
@@ -140,6 +140,7 @@ body{
         width: auto;
     }
     .fixed {
+        width: 20ch;
         position:relative;
         margin-top: 15%;
         left: 15%;
