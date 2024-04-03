@@ -98,7 +98,7 @@ body{
 }
 .apresentacao__imagem{
     width: 30%;
-    min-width: 120px;
+    min-width: 130px;
     border-radius:8%;
     box-shadow: 10px 10px 10px var(--cor-hover)
     
