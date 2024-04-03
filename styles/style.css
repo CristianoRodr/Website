@@ -150,4 +150,10 @@ body{
         padding: 5px;
         font-size: 1rem;
     }
+    
+}
+@media (max-width: 450px) {
+    .apresentacao__imagem {
+      margin: 25% auto auto 35%;
+    }
 }
