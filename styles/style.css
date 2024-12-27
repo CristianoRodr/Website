@@ -3,7 +3,7 @@
 :root {
     --cor-primaria: #1d1a1a;
     --cor-secundaria: #F6F6F6;
-    --cor-terciaria: #22D4FD;
+    --cor-terciaria: #616768;
     --cor-hover: #272727;
 
     --fonte-primaria: 'Krona One', sans-serif;
@@ -21,7 +21,6 @@ body{
 }
 
 .cabecalho{
-    /* padding: 2% 0% 2% 40%; */
     background-color: #8a8c8c;
   
 }
@@ -48,7 +47,7 @@ body{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    /* gap: 82px; */
+
     
 }
 .apresentacao__conteudo{
@@ -131,6 +130,17 @@ body{
     font-size: 1.5rem;
     font-weight: 400;
     bottom: 0;
+}
+
+
+/* Responsividade */
+h1, h2 {
+    margin-bottom: 1.5rem; 
+}
+
+p {
+    margin-top: 1.5rem; 
+    margin-bottom: 1rem;
 }
 
 @media (max-width: 1200px) {
