@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Krona+One&family=Montserrat:wght@400;600&display=swap');
 
 :root {
-    --cor-primaria: #000000;
+    --cor-primaria: #1d1a1a;
     --cor-secundaria: #F6F6F6;
     --cor-terciaria: #22D4FD;
     --cor-hover: #272727;
@@ -22,7 +22,7 @@ body{
 
 .cabecalho{
     /* padding: 2% 0% 2% 40%; */
-    background-color: #191a1a;
+    background-color: #8a8c8c;
   
 }
 .cabecalho__menu__link:hover{
@@ -30,7 +30,7 @@ body{
 }
 .cabecalho__menu{
     display: flex;
-    gap: 80px;
+    gap: 10px;
     
 }
 .cabecalho__menu__link{
