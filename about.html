@@ -31,7 +31,7 @@
             
             <h2 class="apresentacao__conteudo__subtitulo"> Minha Família e Paixões</h2>
                 <p class="apresentacao__conteudo__texto">
-            Sou casado com Elisiana e pai da Alice de 7 anos. Moramos em Teresópolis, RJ, e nos momentos livres, gosto de andar de bicicleta, passear com a família, ler um livros e assistir séries.<br>
+            Sou casado com Elisiana e pai da Alice de <span id="idade-alice"></span> anos. Moramos em Teresópolis, RJ, e nos momentos livres, gosto de andar de bicicleta, passear com a família, ler livros e assistir séries.<br>
 
 <h2 class="apresentacao__conteudo__subtitulo"> Competências e Habilidades</h2>
 <p class="apresentacao__conteudo__texto">
@@ -85,6 +85,24 @@ Estou sempre buscando oportunidades para aplicar minhas habilidades e conhecimen
     <footer class="rodape">
         <p>Desenvolvido por Cristiano Rodrigues</p>
     </footer>
+    <script>
+        function calcularIdade(dataNascimento) {
+            const hoje = new Date();
+            const nascimento = new Date(dataNascimento);
+            let idade = hoje.getFullYear() - nascimento.getFullYear();
+            const mes = hoje.getMonth() - nascimento.getMonth();
+    
+            if (mes < 0 || (mes === 0 && hoje.getDate() < nascimento.getDate())) {
+                idade--;
+            }
+            return idade;
+        }
+    
+        const dataNascimentoAlice = '2017-09-02';
+        const idadeAlice = calcularIdade(dataNascimentoAlice);
+    
+        document.getElementById('idade-alice').textContent = idadeAlice;
+    </script>
 </body>
 
 </html>
