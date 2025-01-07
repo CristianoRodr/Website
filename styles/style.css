@@ -108,7 +108,7 @@ body{
 .apresentacao__links__redes{
     display: flex;
     justify-content: center;
-    gap: 16px;var(--cor-terciaria);
+    gap: 30px;
     width: 5%;
     text-align: center;
     font-size: 1.5rem;
@@ -117,7 +117,9 @@ body{
     text-decoration: none;
     color: var(--cor-secundaria);
     font-family: var(--fonte-secundaria);
+    margin-left: 10%;
 }
+
 .apresentacao__links__navegacao:hover{
     background-color: var(--cor-hover);
     color: var(--cor-secundaria);
